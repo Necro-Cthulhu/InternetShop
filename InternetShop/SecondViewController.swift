@@ -11,6 +11,10 @@ import UIKit
 
 class SecondViewController: ViewController {
     
+    @IBOutlet weak var priceLabelOutlet: UILabel!
+    @IBOutlet weak var descriptionLabelOutlet: UILabel!
+    @IBOutlet weak var nameLabelOutlet: UILabel!
+    @IBOutlet weak var imageIdOutlet: UIImageView!
     @IBOutlet var tableViewTwo: UIView!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

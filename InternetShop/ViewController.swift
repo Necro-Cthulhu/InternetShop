@@ -27,15 +27,17 @@ class ViewController: UIViewController{
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: idCell)
         
-        cell.detailTextLabel?.text = "Цена товара..."
-        cell.textLabel?.text = "Название товара..."
+        cell.textLabel?.text = "Название товара"
+        cell.detailTextLabel?.text = "Цена товара"
+        cell.imageView?.image = #imageLiteral(resourceName: "juicer")
+        
         
         
         return cell
@@ -46,5 +48,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "segueOne", sender: self)
+        
     }
 }

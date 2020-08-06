@@ -58,6 +58,11 @@
                                             <constraint firstAttribute="width" constant="304" id="41F-jQ-KTh"/>
                                             <constraint firstAttribute="height" constant="270" id="HM6-Nd-9KZ"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZ0-d9-vFG">
                                         <rect key="frame" x="0.0" y="286" width="304" height="50"/>
@@ -111,6 +116,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="shV-Fl-jQJ"/>
                     <connections>
+                        <outlet property="descriptionLabelOutlet" destination="bmK-iq-gto" id="PW2-C7-Haw"/>
+                        <outlet property="imageIdOutlet" destination="McG-3b-Hkr" id="eiX-TK-Gs4"/>
+                        <outlet property="nameLabelOutlet" destination="mZ0-d9-vFG" id="yHU-tj-kqW"/>
+                        <outlet property="priceLabelOutlet" destination="bNE-h9-N40" id="Uhr-ZE-Yfk"/>
                         <outlet property="tableViewTwo" destination="BnO-8p-bD3" id="rIa-dj-f43"/>
                     </connections>
                 </viewController>
