@@ -16,7 +16,7 @@
 		705010E524D9788D0077C57C /* InternetShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705010E424D9788D0077C57C /* InternetShopTests.swift */; };
 		705010F024D9788D0077C57C /* InternetShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705010EF24D9788D0077C57C /* InternetShopUITests.swift */; };
 		705010FE24D99DFC0077C57C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705010FD24D99DFC0077C57C /* SecondViewController.swift */; };
-		70C4267824DADCC500D94644 /* ProductClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C4267724DADCC500D94644 /* ProductClass.swift */; };
+		70C4267824DADCC500D94644 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C4267724DADCC500D94644 /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,7 @@
 		705010EF24D9788D0077C57C /* InternetShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetShopUITests.swift; sourceTree = "<group>"; };
 		705010F124D9788D0077C57C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		705010FD24D99DFC0077C57C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		70C4267724DADCC500D94644 /* ProductClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductClass.swift; sourceTree = "<group>"; };
+		70C4267724DADCC500D94644 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +111,7 @@
 				705010D624D9788D0077C57C /* Assets.xcassets */,
 				705010D824D9788D0077C57C /* LaunchScreen.storyboard */,
 				705010DB24D9788D0077C57C /* Info.plist */,
-				70C4267724DADCC500D94644 /* ProductClass.swift */,
+				70C4267724DADCC500D94644 /* Product.swift */,
 			);
 			path = InternetShop;
 			sourceTree = "<group>";
@@ -267,7 +267,7 @@
 			files = (
 				705010FE24D99DFC0077C57C /* SecondViewController.swift in Sources */,
 				705010D224D9788B0077C57C /* ViewController.swift in Sources */,
-				70C4267824DADCC500D94644 /* ProductClass.swift in Sources */,
+				70C4267824DADCC500D94644 /* Product.swift in Sources */,
 				705010CE24D9788B0077C57C /* AppDelegate.swift in Sources */,
 				705010D024D9788B0077C57C /* SceneDelegate.swift in Sources */,
 			);
