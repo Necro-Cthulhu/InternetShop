@@ -22,7 +22,7 @@ class ViewController: UIViewController{
         super.viewDidLoad()
         tableViewOutlet?.dataSource = self
         tableViewOutlet.delegate = self
-        }
+    }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -46,22 +46,14 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         return 90
     }
     
-    
-    
-    
-    
-  /*  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let product = products[indexPath.row]
-        let detailsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailsController") as! SecondViewController
-        detailsController.product = product
-        navigationController?.pushViewController(detailsController, animated: true)
+        performSegue(withIdentifier: "segueOne", sender: self)
     }
-  */
-   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "segueOne", sender: self)
-        
-    }
-  
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? SecondViewController {
+            destination.product = products[(tableViewOutlet.indexPathForSelectedRow?.row)!]
+        }
+    }
 }

@@ -17,13 +17,14 @@ class SecondViewController: ViewController {
     @IBOutlet weak var imageIdOutlet: UIImageView!
     @IBOutlet var tableViewTwo: UIView!
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    var product: Product?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        let secondViewController = segue.destination as! SecondViewController
-        
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            
-            self.performSegue(withIdentifier: "segueOne", sender: self)
-        }
+        nameLabelOutlet.text = product?.name
+        descriptionLabelOutlet.text = product?.description
+        imageIdOutlet.image = UIImage(named: product!.id)
+        priceLabelOutlet.text = product?.price
     }
 }
