@@ -47,13 +47,9 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        performSegue(withIdentifier: "segueOne", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? SecondViewController {
-            destination.product = products[(tableViewOutlet.indexPathForSelectedRow?.row)!]
-        }
+        let detailsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailsController") as! SecondViewController
+        detailsController.product = products[(tableViewOutlet.indexPathForSelectedRow?.row)!]
+        navigationController?.pushViewController(detailsController, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)            // убрал эффект, при котором ячейка остаётся выделенной
     }
 }
