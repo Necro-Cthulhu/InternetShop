@@ -22,6 +22,9 @@ class SecondViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if product?.id == nil {
+            return
+        }
         nameLabelOutlet.text = product?.name
         descriptionLabelOutlet.text = product?.description
         imageIdOutlet.image = UIImage(named: product!.id)
