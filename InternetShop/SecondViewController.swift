@@ -22,7 +22,7 @@ class SecondViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if product?.id == nil {
+        if product == nil {
             return
         }
         nameLabelOutlet.text = product?.name

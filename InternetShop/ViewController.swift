@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableViewOutlet: UITableView!
     
     var products = [Product]()
-    var count = Int()
     
     override func viewDidLoad() {
         
@@ -23,7 +22,7 @@ class ViewController: UIViewController {
             return
         }
         
-        // метод для парсинга
+        // parse method
         
         func parse() {
             let url = Bundle.main.url(forResource: "products", withExtension: "json")
@@ -35,7 +34,7 @@ class ViewController: UIViewController {
                         else { return }
                     let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
                     let productsArray = json?.value(forKey: "productsList") as! NSArray
-                    count = productsArray.count
+                    
                     
                     for arrayData in productsArray {
                         
@@ -45,8 +44,8 @@ class ViewController: UIViewController {
                                               name: productData["name"] as? String ?? "",
                                               price: productData["price"] as? String ?? "",
                                               description: productData["description"] as? String ?? "")
-                                              
-                                              products.append(product)
+                        
+                        products.append(product)
                     }
                 }
                     
@@ -59,15 +58,16 @@ class ViewController: UIViewController {
         }
         
         super.viewDidLoad()
+        parse()
         tableViewOutlet?.dataSource = self
         tableViewOutlet.delegate = self
-        parse()
     }
+    
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return count
+        return products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -89,6 +89,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let detailsController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailsController") as! SecondViewController
         navigationController?.pushViewController(detailsController, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
-        
+        detailsController.product = products[indexPath.row]
     }
 }
+
+
